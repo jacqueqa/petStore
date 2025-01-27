@@ -2,7 +2,7 @@
 
 describe('Customer wants to choose an available Pet on the Store', () => {
   it('passes', () => {
-    cy.getAvailablePet().then((response) => {
+    cy.getAvailablePets().then((response) => {
       expect(response.status).to.eq(200)
       expect(response.body).to.have.length.greaterThan(0)
       expect(response.body[0]).to.contain.keys('id', 'name', 'status')
@@ -13,7 +13,7 @@ describe('Customer wants to choose an available Pet on the Store', () => {
 // Create functions for random numbers on Manager Actions test
 describe('Customer wants to buy a pet on the store', () => {
   it('passes', () => {
-    cy.buyAvailablePet().then((response) => {
+    cy.buyAvailablePet(250).then((response) => {
       const petId = response.body.petId
       const orderdId = response.body.id
       expect(response.status).to.eq(200)
