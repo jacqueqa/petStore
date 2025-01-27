@@ -54,6 +54,18 @@ Cypress.Commands.add('removePetData', (petId) => {
   })
 })
 
+// Scenario 2
+Cypress.Commands.add('removeInexistentPet', (petId) => {
+  cy.request({
+    failOnStatusCode: false,
+    method: 'DELETE',
+    url: '/v2/pet/' + petId,
+    headers: {
+      accept: 'application/json',
+    }
+  })
+})
+
 
 // Scenario 3
 Cypress.Commands.add('getAvailablePets', () => {
