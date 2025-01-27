@@ -10,16 +10,15 @@ describe('Customer wants to choose an available Pet on the Store', () => {
   })
 })  
 
-// Create functions for random numbers on Manager Actions test
 describe('Customer wants to buy a pet on the store', () => {
   it('passes', () => {
-    cy.buyAvailablePet(250).then((response) => {
-      const petId = response.body.petId
-      const orderdId = response.body.id
-      expect(response.status).to.eq(200)
-      expect(response.body).to.have.include.keys('id', 'petId', 'quantity', 'shipDate', 'status', 'complete')
-      expect(response.body.petId).to.be.eq(250) // Hardcoded value to be changed on Manager Actions tests
-      console.log(`The customer bought the pet with ID: ${petId} and the order ID is: ${orderdId}`)
+    cy.addNewPetToStore('available').then((response) => {
+      const petId = response.body.id
+      cy.buyAvailablePet(petId).then((response) => {
+        expect(response.status).to.eq(200)
+        expect(response.body).to.have.include.keys('id', 'petId', 'quantity', 'shipDate', 'status', 'complete')
+        expect(response.body.petId).to.be.eq(petId) 
+      })
     })
-  })
-})  
+  }) 
+})

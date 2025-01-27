@@ -83,6 +83,7 @@ Cypress.Commands.add('getAvailablePets', () => {
 Cypress.Commands.add('buyAvailablePet', (petId) => {
   const timeString = (new Date()).toISOString()
   const payload = {
+    id: faker.number.int(1000),
     petId: petId,
     quantity: 1,
     shipDate: timeString,
@@ -111,4 +112,12 @@ Cypress.Commands.add('getOrderId', (orderId) => {
   })
 })
 
-//
+Cypress.Commands.add('deleteOrder', (orderId) => {
+  cy.request({
+    method: 'DELETE',
+    url: '/v2/store/order/' + orderId,
+    headers: {
+      accept: 'application/json',
+    },
+  })
+})
