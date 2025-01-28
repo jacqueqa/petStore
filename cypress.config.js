@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: 'petStore',
+  projectId: "petStore",
   e2e: {
     baseUrl: "https://petstore.swagger.io",
   },
