@@ -13,7 +13,6 @@ The following API was used for practice: [PetStore](https://petstore.swagger.io/
 | 3- As a Customer I want to choose a pet and buy it |[Scenario - 3](https://github.com/jacqueqa/petStore/issues/11) | 2| 
 | 4- As a Customer I want to manage and cancel my order| [Scenario - 4](https://github.com/jacqueqa/petStore/issues/14) | 2 |
 
-**Each issue contains one or more test cases that were needed to cover the scenarios.**
 
 Github Project and the following issues were created to help streamline manual testing, as well as serve as a guide for test automation.
 Some of the preconditions described there, were only necessary for manual tests. Automated tests are capable fulfilling those preconditions in a self contained way.
@@ -49,4 +48,5 @@ npx cypress run
 
 ## Reports 
 You can check the daily pipeline results here:
+
 [![PetStore Report](https://github.com/jacqueqa/petStore/actions/workflows/cypress.yaml/badge.svg)](https://github.com/jacqueqa/petStore/actions/workflows/cypress.yaml)
