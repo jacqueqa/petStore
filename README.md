@@ -1,3 +1,5 @@
+Update: An issue was created to fix the pipeline flakiness :: https://github.com/jacqueqa/petStore/issues/23
+
 # PetStore - API TESTS
 This repository contains practice API tests using Cypress, designed to test a pet store's API.
 The following API was used for practice: [PetStore](https://petstore.swagger.io/)
